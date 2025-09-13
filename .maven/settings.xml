@@ -12,3 +12,4 @@
       <password>${client.id}~?~${client.secret}</password>
     </server>
   </servers>
+  </settings>
