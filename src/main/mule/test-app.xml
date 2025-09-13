@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="07a28b5b-fef1-4613-b7b5-e257ffc995dd" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="test-appFlow" doc:id="38b10fcf-5e7b-44d4-b7fd-5f1a111cba37" >
+		<http:listener doc:name="Listener" doc:id="601dc37e-5d82-499f-8c2a-d6ec521f2ff7" config-ref="HTTP_Listener_config" path="/test"/>
+		<ee:transform doc:name="Transform Message" doc:id="a72e3ebe-2f16-4b83-b8df-5555909c0f30" >
+			<ee:message >
+			</ee:message>
+			<ee:variables >
+				<ee:set-variable variableName="test_var" ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"message" : "employee details succesfully retrieved",
+	"employee_details" : "E2012"
+}]]></ee:set-variable>
+				<ee:set-variable variableName="logger_message" ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"message" : "flow process succesfully ended"
+}]]></ee:set-variable>
+			</ee:variables>
+		</ee:transform>
+		<logger level="INFO" doc:name="end Logger" doc:id="265d4eac-1e71-474e-ada7-6a53632407ca" message="flow process end succesfully #[vars.logger_message]"/>
+	</flow>
+</mule>
