@@ -40,9 +40,6 @@
 			      <releaseChannel>NONE</releaseChannel>
 			      <replicas>1</replicas>
 			      <vCores>1</vCores>
-			      <deploymentSettings>
-			       <generateDefaultPublicUri>true</generateDefaultPublicUri>
-			      </deploymentSettings>
 			    </cloudhub2Deployment>
 			  </configuration>
 			</plugin>
