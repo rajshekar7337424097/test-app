@@ -10,6 +10,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	</http:listener-config>
 	<flow name="test-appFlow" doc:id="38b10fcf-5e7b-44d4-b7fd-5f1a111cba37" >
 		<http:listener doc:name="Listener" doc:id="601dc37e-5d82-499f-8c2a-d6ec521f2ff7" config-ref="HTTP_Listener_config" path="/test"/>
+		<logger level="INFO" doc:name="Logger" doc:id="b4f684a3-2449-4d9b-b2ee-071f4482ee9e" message="flow begins"/>
 		<ee:transform doc:name="Transform Message" doc:id="a72e3ebe-2f16-4b83-b8df-5555909c0f30" >
 			<ee:message >
 			</ee:message>
