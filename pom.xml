@@ -4,7 +4,7 @@
 
 	<groupId>2121e78f-072a-4f57-b358-0fa8afe90031</groupId>
 	<artifactId>test-app</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<packaging>mule-application</packaging>
 
 	<name>test-app</name>
@@ -14,7 +14,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.9.8</app.runtime>
-		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
+		<mule.maven.plugin.version>4.5.2</mule.maven.plugin.version>
 	</properties>
 
 	<build>
