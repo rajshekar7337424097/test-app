@@ -12,7 +12,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
+		
+		<javaVersion>17</javaVersion>
 		<app.runtime>4.9.8</app.runtime>
 		<mule.maven.plugin.version>4.5.2</mule.maven.plugin.version>
 	</properties>
@@ -37,6 +38,8 @@
 			      <target>Cloudhub-US-East-2</target>
 				  <server>Repository</server>
 			      <applicationName>${project.artifactId}</applicationName>
+			      <muleVersion>${app.runtime}</muleVersion>
+				  <javaVersion>${javaVersion}</javaVersion>
 			      <releaseChannel>NONE</releaseChannel>
 			      <replicas>1</replicas>
 			      <vCores>1</vCores>
